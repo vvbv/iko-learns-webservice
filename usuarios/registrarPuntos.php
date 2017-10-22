@@ -62,7 +62,6 @@
                 if($accion == 'restar'){
                     $sql = "INSERT INTO `puntos` (`id_usuario`, `puntos`) VALUES('$id_usuario','0')";
                     $conn->query($sql);
-                    echo "restando";
                 
                 /*
                 * Si el usuario no existe pero se le van a sumar puntos,
@@ -71,7 +70,6 @@
                 }elseif ($accion == 'sumar') {
                     $sql = "INSERT INTO `puntos` (`id_usuario`, `puntos`) VALUES('$id_usuario','$puntos')";
                     $conn->query($sql);
-                    echo "sumando";
                 }
                 
             }
