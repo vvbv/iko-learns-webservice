@@ -11,7 +11,7 @@
         $sql = "SELECT * FROM `usuarios` WHERE `id` = '$id_usuario'";
         $result = $conn->query($sql);
 
-        if($result == null){
+        if($result->fetch_assoc() == null){
             echo json_encode(
                 array(
                         'codError' => '-1',
