@@ -5,8 +5,8 @@
     if(isset($_GET["id_usuario"]) && isset($_GET["puntos"]) && isset($_GET["accion"] )){
         
         $id_usuario = $_GET["id_usuario"];
-        $puntos = $_GET["puntos"];
-        $accion = $_GET["accion"];
+        $puntos = $_GET["puntos"];// Entero positivo
+        $accion = $_GET["accion"];// Sumar o restar
 
         $sql = "SELECT * FROM `usuarios` WHERE `id` = '$id_usuario'";
         $result = $conn->query($sql);
@@ -32,7 +32,7 @@
                 if($accion == 'sumar'){
                     
                     $sql = "UPDATE `puntos` SET `puntos` = '" . ($result['puntos'] + $puntos) . "' WHERE `id_usuario` = '$id_usuario'";
-                    $conn->query($sql)
+                    $conn->query($sql);
                 
                 /*
                 * Si se le van a restar puntos, se hace el primer caso, cuando el
@@ -46,7 +46,7 @@
                 * CASO 2:  25 - 20 = 5
                 * CASO 3:  15 - 20 = 0
                 */
-                }elseif(($accion == 'restar')&&( ($result['puntos'] - $puntos) > 0 )){
+                }elseif(($accion == 'restar')&&(($result['puntos'] - $puntos) > 0 )){
                     $sql = "UPDATE `puntos` SET `puntos` = '" . ($result['puntos'] - $puntos) . "' WHERE `id_usuario` = '$id_usuario'";
                     $conn->query($sql);
                 }elseif(($accion == 'restar')&&( ($result['puntos'] - $puntos) <= 0 )){
