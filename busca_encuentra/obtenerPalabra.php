@@ -14,5 +14,4 @@
             'palabra_yolo' => $retorno['palabra_ingles_yolo']
         )
     );
-    
 ?>
