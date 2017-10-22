@@ -4,7 +4,7 @@
     // Consulta
     if(isset($_GET["id_fb"])){
         $id_usuario_facebook = $_GET["id_fb"];
-        $sql = "SELECT  * FROM `usuarios` WHERE `id_facebook` = '$id_usuario_facebook'";
+        $sql = "SELECT * FROM `usuarios` WHERE `id_facebook` = '$id_usuario_facebook'";
         $result = $conn->query($sql);
         //Manejo de resultados
         $retorno = $result->fetch_assoc();
