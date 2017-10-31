@@ -1,9 +1,9 @@
 <?php
     include '../config.php';
-    header('Content-Type: text/html; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=ISO-8859-1');
     // Consulta
     if(isset($_GET["id_usuario"]) && isset($_GET["puntos"]) && isset($_GET["accion"] )){
-        
+
         $id_usuario = $_GET["id_usuario"];
         $puntos = $_GET["puntos"];// Entero positivo
         $accion = $_GET["accion"];// Sumar o restar
@@ -19,7 +19,7 @@
                     )
                 );
         }else{
-            
+
             // Verificamos si el usuario existe en la tabla de puntos
             $result = null;
             $sql = "SELECT * FROM `puntos` WHERE `id_usuario` = '$id_usuario'";
@@ -27,13 +27,13 @@
             $result = $result->fetch_assoc();
             // Si el usuario existe, pasamos a registrar los puntos
             if($result != null){
-                
+
                 // Suma de puntos
                 if($accion == 'sumar'){
-                    
+
                     $sql = "UPDATE `puntos` SET `puntos` = '" . ($result['puntos'] + $puntos) . "' WHERE `id_usuario` = '$id_usuario'";
                     $conn->query($sql);
-                
+
                 /*
                 * Si se le van a restar puntos, se hace el primer caso, cuando el
                 * jugador tiene más de 0 puntos y la resta de los puntos que posee
@@ -62,7 +62,7 @@
                 if($accion == 'restar'){
                     $sql = "INSERT INTO `puntos` (`id_usuario`, `puntos`) VALUES('$id_usuario','0')";
                     $conn->query($sql);
-                
+
                 /*
                 * Si el usuario no existe pero se le van a sumar puntos,
                 * se hace el registro con el valor de los puntos
@@ -71,7 +71,7 @@
                     $sql = "INSERT INTO `puntos` (`id_usuario`, `puntos`) VALUES('$id_usuario','$puntos')";
                     $conn->query($sql);
                 }
-                
+
             }
             $sql = "SELECT * FROM `puntos` WHERE `id_usuario` = '$id_usuario'";
             $result = $conn->query($sql);
@@ -86,5 +86,5 @@
                 )
             );
     }
-    
+
 ?>

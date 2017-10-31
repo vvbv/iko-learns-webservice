@@ -1,6 +1,6 @@
 <?php
     include '../config.php';
-    header('Content-Type: text/html; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=ISO-8859-1');
     // Consulta
     $sql = "SELECT * FROM `palabras` ORDER BY RAND() LIMIT 1";
     $result = $conn->query($sql);

@@ -1,6 +1,6 @@
 <?php
     include '../config.php';
-    header('Content-Type: text/html; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=ISO-8859-1');
     // Consulta
     if(isset($_GET["id_fb"])){
         $id_usuario_facebook = $_GET["id_fb"];
@@ -11,7 +11,7 @@
         if($retorno == null){
             echo json_encode(
                 array(
-                        'codError' => '-1',
+                        'codError' => '-2',
                         'error' => 'Usuario no encontrado.'
                     )
                 );
@@ -26,5 +26,5 @@
                 )
             );
     }
-    
+
 ?>
