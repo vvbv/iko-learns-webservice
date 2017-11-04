@@ -1,3 +1,5 @@
 # Iko-learns-webservice
 
-Backend del juego Iko Learns
+Backend escrito en php, del juego Iko Learns.
+
+Proyecto final de desarrollo de videojuegos.
