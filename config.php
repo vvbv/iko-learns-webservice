@@ -2,8 +2,8 @@
 
     $servername = "localhost";
     $username = "root";
-    $password = "Univalle";
-    $dbname = "iko";
+    $password = "root";
+    $dbname = "iko_learns";
 
     // Crea la conexión con el servidor MySQL
     $conn = new mysqli($servername, $username, $password, $dbname);
