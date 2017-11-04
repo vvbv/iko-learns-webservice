@@ -1,1 +1,3 @@
-# iko-learns-webservice
+# Iko-learns-webservice
+
+Backend del juego Iko Learns
