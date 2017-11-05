@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-11-2017 a las 18:17:32
+-- Tiempo de generación: 04-11-2017 a las 23:58:49
 -- Versión del servidor: 5.7.17
 -- Versión de PHP: 5.6.30-0+deb8u1
 
@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `trivias_retos` (
   `id_usuario_ganador` bigint(20) DEFAULT NULL,
   `fecha_hora_Registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `activa_hace` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 --
 -- Disparadores `trivias_retos`
@@ -217,15 +217,21 @@ CREATE TABLE IF NOT EXISTS `trivia_reto_ronda` (
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
 `id` bigint(20) NOT NULL,
-  `id_facebook` varchar(120) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `id_facebook` varchar(120) NOT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `nombres` varchar(100) DEFAULT NULL,
+  `apellidos` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `fecha_hora_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `id_facebook`) VALUES
-(1, '123456789');
+INSERT INTO `usuarios` (`id`, `id_facebook`, `username`, `nombres`, `apellidos`, `password`, `fecha_hora_registro`) VALUES
+(1, '123456789', NULL, NULL, NULL, NULL, '2017-11-04 23:29:13'),
+(2, '987654321', NULL, NULL, NULL, NULL, '2017-11-04 23:29:13');
 
 -- --------------------------------------------------------
 
@@ -296,7 +302,7 @@ ALTER TABLE `trivia_reto_ronda`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `nombres` (`nombres`);
 
 --
 -- Indices de la tabla `usuarios_powerups`
@@ -332,7 +338,7 @@ MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT de la tabla `trivias_retos`
 --
 ALTER TABLE `trivias_retos`
-MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT de la tabla `trivias_solo_resueltas`
 --
@@ -347,7 +353,7 @@ MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Restricciones para tablas volcadas
 --
