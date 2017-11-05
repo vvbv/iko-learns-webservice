@@ -21,11 +21,11 @@
         2. Existe el retador y el retado.
 
     */
-    if(!(isset($_GET["id_retador"])) && !(isset($_GET["id_retado"]))){
+    if(!(isset($_GET["id_retador"]))){
         echo json_encode(
                 array(
                         'codError' => '-2',
-                        'error' => 'Usuario retador no encontrado.'
+                        'error' => 'Usuario retador no definido.'
                     )
                 );
         die();
