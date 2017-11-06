@@ -26,7 +26,7 @@ public class BuscaEncuentra : MonoBehaviour
   	debugRequest(request);
   }
 
-  private debugRequest(UnityWebRequest request){
+  private void debugRequest(UnityWebRequest request){
   	print("request completed with code: " + request.responseCode);
 
   	if (request.isNetworkError)

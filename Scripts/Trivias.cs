@@ -38,7 +38,6 @@
     	debugRequest(request);
     }
 
-
     private  IEnumerator requestCrearReto(string id_retador, string id_retado)
     {
       UnityWebRequest request = UnityWebRequest.Get(server + "/crearReto.php?id_retador="+ id_retador +"&id_retado=" + id_retado);
@@ -55,7 +54,7 @@
     	debugRequest(request);
     }
 
-    private debugRequest(UnityWebRequest request){
+    private void debugRequest(UnityWebRequest request){
     	print("request completed with code: " + request.responseCode);
 
     	if (request.isNetworkError)
@@ -85,7 +84,7 @@
 
     public void AceptarReto(string id_reto, string id_usuario)
     {
-      StartCoroutine(requestObtenerRetosDisponibles(id_reto, id_usuario));
+      StartCoroutine(requestAceptarReto(id_reto, id_usuario));
   }
 
 

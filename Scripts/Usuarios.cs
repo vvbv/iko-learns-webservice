@@ -27,7 +27,7 @@ public class Usuarios : MonoBehaviour
   	debugRequest(request);
   }
 
-  private debugRequest(UnityWebRequest request){
+  private void debugRequest(UnityWebRequest request){
   	print("request completed with code: " + request.responseCode);
 
   	if (request.isNetworkError)
@@ -43,12 +43,12 @@ public class Usuarios : MonoBehaviour
 
   public void ObtenerUsuario(string id_fb)
   {
-    StartCoroutine(requestObtenerRetosDisponibles(id_fb));
+    StartCoroutine(requestObtenerUsuario(id_fb));
   }
 
   public void RegistrarPuntos(string id_usuario, string puntos, string accion)
   {
-  	StartCoroutine(requestObtenerTrivia(id_usuario, puntos, accion));
+  	StartCoroutine(requestRegistrarPuntos(id_usuario, puntos, accion));
   }
 
 }
