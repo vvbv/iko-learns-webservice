@@ -27,19 +27,18 @@ public class Usuarios : MonoBehaviour
   	debugRequest(request);
   }
 
-	private debugRequest(UnityWebRequest request){
-		print("request completed with code: " + request.responseCode);
+  private debugRequest(UnityWebRequest request){
+  	print("request completed with code: " + request.responseCode);
 
-		if (request.isNetworkError)
-		{
-			print("Error: " + request.error);
-		}
-		else
-		{
-			print("Request Response: " + request.downloadHandler.text);
-		}
-	}
-
+  	if (request.isNetworkError)
+  	{
+  		print("Error: " + request.error);
+  	}
+  	else
+  	{
+  		print("Request Response: " + request.downloadHandler.text);
+  	}
+  }
 
 
   public void ObtenerUsuario(string id_fb)
@@ -47,12 +46,9 @@ public class Usuarios : MonoBehaviour
     StartCoroutine(requestObtenerRetosDisponibles(id_fb));
   }
 
-	public void RegistrarPuntos(string id_usuario, string puntos, string accion)
-	{
-		StartCoroutine(requestObtenerTrivia(id_usuario, puntos, accion));
-	}
-
-
-
+  public void RegistrarPuntos(string id_usuario, string puntos, string accion)
+  {
+  	StartCoroutine(requestObtenerTrivia(id_usuario, puntos, accion));
+  }
 
 }

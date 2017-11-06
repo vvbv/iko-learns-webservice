@@ -7,80 +7,41 @@ using System.Net;
 using System.IO;
 using System.Text;
 
- [SerializeField]
-class Pregunta{
-	public string id;
-	public string pregunta;
-	public string opcion_a;
-	public string opcion_b;
-	public string opcion_c;
-	public string opcion_d;
-	public string respuesta_correcta;
+[SerializeField]
+class Palabra{
+  public string id;
+  public string palabra;
+  public string palabra_yolo;
 }
 
-public class Trivias : MonoBehaviour
+public class BuscaEncuentra : MonoBehaviour
 {
-  public string server = "http://localhost/iko-learns/trivias";
+  public string server = "http://localhost/iko-learns/busca_encuentra";
 
-  private IEnumerator requestObtenerTrivia()
+  private IEnumerator requestObtenerPalabra()
   {
-  	UnityWebRequest request = UnityWebRequest.Get(server + "/obtenerTrivia.php");
+  	UnityWebRequest request = UnityWebRequest.Get(server + "/obtenerPalabra.php");
   	yield return request.Send();
 
   	debugRequest(request);
   }
 
-  private  IEnumerator requestObtenerRetosDisponibles()
-  {
-    UnityWebRequest request = UnityWebRequest.Get(server + "/obtenerRetosDisponibles.php");
-  	yield return request.Send();
+  private debugRequest(UnityWebRequest request){
+  	print("request completed with code: " + request.responseCode);
 
-  	debugRequest(request);
+  	if (request.isNetworkError)
+  	{
+  		print("Error: " + request.error);
+  	}
+  	else
+  	{
+  		print("Request Response: " + request.downloadHandler.text);
+  	}
   }
 
-
-  private  IEnumerator requestCrearReto(string id_retador, string id_retado)
+  public void obtenerPalabras()
   {
-    UnityWebRequest request = UnityWebRequest.Get(server + "/crearReto.php?id_retador="+ id_retador +"&id_retado=" + id_retado);
-  	yield return request.Send();
-
-  	debugRequest(request);
+    StartCoroutine(requestObtenerPalabra());
   }
-
-  private  IEnumerator requestAceptarReto(string id_reto, string id_usuario)
-  {
-    UnityWebRequest request = UnityWebRequest.Get(server + "/aceptarReto.php?id_reto="+ id_reto +"&id_usuario=" + id_usuario);
-  	yield return request.Send();
-
-  	debugRequest(request);
-  }
-
-	private debugRequest(UnityWebRequest request){
-		print("request completed with code: " + request.responseCode);
-
-		if (request.isNetworkError)
-		{
-			print("Error: " + request.error);
-		}
-		else
-		{
-			print("Request Response: " + request.downloadHandler.text);
-		}
-	}
-
-
-
-  public void ObtenerRetosDisponibles()
-  {
-    StartCoroutine(requestObtenerRetosDisponibles());
-  }
-
-	public void ObtenerTrivia()
-	{
-		StartCoroutine(requestObtenerTrivia());
-	}
-
-
-
 
 }
