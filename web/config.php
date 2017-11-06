@@ -1,9 +1,9 @@
 <?php
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "iko_learns";
+    $servername = "db4free.net";
+    $username = "iko_learns_db";
+    $password = "iko_learns_db";
+    $dbname = "iko_learns_db";
 
     // Crea la conexión con el servidor MySQL
     $conn = new mysqli($servername, $username, $password, $dbname);
