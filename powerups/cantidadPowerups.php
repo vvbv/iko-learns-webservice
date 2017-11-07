@@ -2,7 +2,8 @@
     include '../config.php';
     header('Content-Type: application/json; charset=ISO-8859-1');
     
-    //muestra todos los valores para un powerups y usuario particular
+    //muestra la cantidad de determinado powerups de un usuario
+    //retorna la cantidad o el error correspondiente
     
     $id_usuario_facebook = $_GET["id_fb"];
     $id_p = $_GET["id_power"];
@@ -75,9 +76,6 @@
             
             echo json_encode(
                 array(
-                    'user_id' => $retorno['user_id'],
-                    'power_id' => $retorno['power_id'],
-                    'fecha' => $retorno['fecha'],
                     'cantidad' => $retorno['cantidad']
                 )
             );
