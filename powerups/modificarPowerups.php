@@ -38,9 +38,9 @@
                 if($accion == 'sumar'){
                     $sql = "UPDATE `usuarios_powerups` 
 
-                    SET `cantidad`='".($result['cantidad'] + $cantidad).
-                    "' WHERE `power_id` = '$id_power'";
-                    //"' WHERE `user_id` = '$returno_id_user'" AND `power_id` = '$id_power'";
+                    SET `cantidad`='".($result['cantidad'] + $cantidad) .
+                    //"' WHERE `power_id` = '$id_power'";
+                    "' WHERE `user_id` = '$returno_id_user' AND `power_id` = '$id_power'";
                     $conn->query($sql);
 
                 }/*
@@ -75,14 +75,13 @@
 				
             }
             //echo "entro a aqudfi".$returno_id_user."-".$id_power;
-/*
-            $sql = "SELECT * FROM `usuarios_powerups
-            	` WHERE `user_id` = '$returno_id_user' and `power_id` = '$id_power'";
+
+            $sql = "SELECT * FROM `usuarios_powerups` WHERE `user_id` = '$returno_id_user' and `power_id` = '$id_power' LIMIT 1";
 
             $result = $conn->query($sql);
             $cantidad_usuario = $result->fetch_assoc();
             echo json_encode(array('cantidad' => $cantidad_usuario['cantidad']));
-            die();*/
+            die();
         }
     	
     }else{
