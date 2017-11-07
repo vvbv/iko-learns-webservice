@@ -1,6 +1,9 @@
 <?php
     include '../config.php';
     header('Content-Type: application/json; charset=ISO-8859-1');
+
+    set_time_limit(2000);
+
     // Consulta
     $sql = "SELECT * FROM `trivias` ORDER BY RAND() LIMIT 1";
     $result = $conn->query($sql);
