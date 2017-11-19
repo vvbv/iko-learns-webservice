@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-11-2017 a las 00:24:24
+-- Tiempo de generación: 19-11-2017 a las 01:49:15
 -- Versión del servidor: 5.7.17
 -- Versión de PHP: 5.6.30-0+deb8u1
 
@@ -109,9 +109,8 @@ CREATE TABLE IF NOT EXISTS `puntos` (
 --
 
 INSERT INTO `puntos` (`id`, `id_usuario`, `puntos`, `fecha_hora_registro`) VALUES
-(1, 1, 165, '2017-11-19 04:51:30'),
-(2, 2, 55, '2017-11-19 05:18:21'),
-(3, 2, 400, '2017-11-06 05:00:00');
+(1, 1, 126080, '2017-11-19 04:51:30'),
+(2, 2, 55, '2017-11-19 05:18:21');
 
 -- --------------------------------------------------------
 
@@ -233,16 +232,18 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nombres` varchar(100) DEFAULT NULL,
   `apellidos` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
+  `nivel` bigint(20) NOT NULL DEFAULT '0',
   `fecha_hora_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `id_facebook`, `username`, `nombres`, `apellidos`, `password`, `fecha_hora_registro`) VALUES
-(1, '123456789', NULL, NULL, NULL, NULL, '2017-11-04 23:29:13'),
-(2, '987654321', NULL, NULL, NULL, NULL, '2017-11-04 23:29:13');
+INSERT INTO `usuarios` (`id`, `id_facebook`, `username`, `nombres`, `apellidos`, `password`, `nivel`, `fecha_hora_registro`) VALUES
+(1, '123456789', NULL, NULL, NULL, NULL, 106, '2017-11-04 23:29:13'),
+(2, '987654321', NULL, NULL, NULL, NULL, 0, '2017-11-04 23:29:13'),
+(15, '9512357', NULL, NULL, NULL, NULL, 0, '2017-11-19 06:33:45');
 
 -- --------------------------------------------------------
 
@@ -291,7 +292,7 @@ ALTER TABLE `powerups`
 -- Indices de la tabla `puntos`
 --
 ALTER TABLE `puntos`
- ADD PRIMARY KEY (`id`), ADD KEY `id_usuario` (`id_usuario`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_usuario_2` (`id_usuario`), ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `trivias`
@@ -372,7 +373,7 @@ MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- Restricciones para tablas volcadas
 --
