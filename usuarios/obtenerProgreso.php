@@ -48,6 +48,7 @@
     echo json_encode(
         array(
             'id_usuario' => $idUsuario, 
+            'nivel' => (int) calcularNivel($puntosCalcular),
             'progreso' => calcularProgreso($puntosCalcular)
         )
     );
