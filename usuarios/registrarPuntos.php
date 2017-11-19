@@ -1,10 +1,12 @@
 <?php
     include '../config.php';
+    require '../fx/funcionesExtra.php';
     header('Content-Type: application/json; charset=ISO-8859-1');
     // Consulta
     if(isset($_GET["id_usuario"]) && isset($_GET["puntos"]) && isset($_GET["accion"] )){
 
         $id_usuario = $_GET["id_usuario"];
+        $id_facebook = $_GET["id_usuario"]; // Adaptación temporal de compatibilidad
         $puntos = $_GET["puntos"];// Entero positivo
         $accion = $_GET["accion"];// Sumar o restar
 
@@ -80,7 +82,21 @@
             $sql = "SELECT * FROM `puntos` WHERE `id_usuario` = '$id_usuario'";
             $result = $conn->query($sql);
             $puntos_usuario = $result->fetch_assoc();
-            echo json_encode(array('puntos' => $puntos_usuario['puntos']));
+
+            //Registrador de nivel
+            $puntosUsuario = $puntos_usuario['puntos'];
+            $nivel = calcularNivel($puntosUsuario);
+
+            $sql = "UPDATE usuarios SET nivel = '$nivel' WHERE id = '$id_usuario'";
+            $conn->query($sql);
+
+            echo json_encode(
+                array(
+                    'id_facebook' => $id_facebook,
+                    'puntos' => $puntos_usuario['puntos'],
+                    'nivel' => (int) $nivel
+                )
+            );
         }
     }else{
         echo json_encode(
