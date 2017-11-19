@@ -8,10 +8,12 @@
         $puntos = $_GET["puntos"];// Entero positivo
         $accion = $_GET["accion"];// Sumar o restar
 
-        $sql = "SELECT * FROM `usuarios` WHERE `id` = '$id_usuario'";
+        $sql = "SELECT * FROM `usuarios` WHERE `id_facebook` = '$id_usuario'";
         $result = $conn->query($sql);
 
-        if($result->fetch_assoc() == null){
+        $registro = $result->fetch_assoc();
+        if($registro == null){
+            
             echo json_encode(
                 array(
                         'codError' => '-1',
@@ -20,6 +22,8 @@
                 );
         }else{
 
+            $id_usuario = $registro['id'];
+            
             // Verificamos si el usuario existe en la tabla de puntos
             $result = null;
             $sql = "SELECT * FROM `puntos` WHERE `id_usuario` = '$id_usuario'";
