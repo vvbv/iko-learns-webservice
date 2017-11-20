@@ -173,15 +173,15 @@ CREATE TRIGGER `electorAutomaticoTrivias` BEFORE INSERT ON `trivias_retos`
     DECLARE id_ronda_5 BIGINT;
 
 	SET id_ronda_1 = (SELECT id FROM trivias ORDER BY RAND() LIMIT 1);
-    
+
 	SET id_ronda_2 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 ORDER BY RAND() LIMIT 1);
-    
+
 	SET id_ronda_3 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 AND trivias.id <> id_ronda_2 ORDER BY RAND() LIMIT 1);
-    
+
 	SET id_ronda_4 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 AND trivias.id <> id_ronda_2 AND trivias.id <> id_ronda_3 ORDER BY RAND() LIMIT 1);
-    
+
 	SET id_ronda_5 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 AND trivias.id <> id_ronda_2 AND trivias.id <> id_ronda_3 AND trivias.id <> id_ronda_4 ORDER BY RAND() LIMIT 1);
-	
+
     SET NEW.id_ronda_1 = id_ronda_1;
     SET NEW.id_ronda_2 = id_ronda_2;
     SET NEW.id_ronda_3 = id_ronda_3;
@@ -322,7 +322,7 @@ ALTER TABLE `trivia_reto_ronda`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_facebook` (`id_facebook`), ADD UNIQUE KEY `nombres` (`nombres`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_facebook` (`id_facebook`), ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indices de la tabla `usuarios_powerups`

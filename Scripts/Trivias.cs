@@ -30,6 +30,14 @@
     	debugRequest(request);
     }
 
+    private IEnumerator requestMarcarTriviaResuelta(string id_usuario, string id_trivia)
+    {
+    	UnityWebRequest request = UnityWebRequest.Get(server + "/marcarTriviaResuelta.php?id_usuario="+ id_usuario +"&id_trivia="+id_trivia);
+    	yield return request.Send();
+
+    	debugRequest(request);
+    }
+
     private  IEnumerator requestObtenerRetosDisponibles()
     {
       UnityWebRequest request = UnityWebRequest.Get(server + "/obtenerRetosDisponibles.php");
@@ -77,6 +85,11 @@
     	StartCoroutine(requestObtenerTrivia());
     }
 
+    public void MarcarTriviaResuelta(string id_usuario, string id_trivia)
+    {
+    	StartCoroutine(requestMarcarTriviaResuelta(id_usuario, id_trivia));
+    }
+
     public void CrearReto(string id_retador, string id_retado)
     {
       StartCoroutine(requestCrearReto(id_retador, id_retado));
@@ -85,7 +98,6 @@
     public void AceptarReto(string id_reto, string id_usuario)
     {
       StartCoroutine(requestAceptarReto(id_reto, id_usuario));
-  }
-
+    }
 
   }
