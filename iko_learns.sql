@@ -55,19 +55,60 @@ CREATE TABLE IF NOT EXISTS `palabras` (
   `palabra_ingles_yolo` varchar(80) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `palabras`
---
+
 
 INSERT INTO `palabras` (`id`, `palabra_ingles`, `palabra_ingles_yolo`) VALUES
-(7, 'apple', 'apple'),
+(40, 'A', ''),
+(49, 'A boy', ''),
+(50, 'A girl', ''),
+(46, 'A man', ''),
+(48, 'A woman', ''),
+(41, 'am', ''),
+(42, 'An', ''),
+(51, 'An apple', ''),
+(47, 'An orange', ''),
+(7, 'Apple', 'apple'),
+(33, 'are', ''),
 (5, 'book', 'book'),
+(9, 'boy', 'boy'),
 (4, 'chair', 'chair'),
 (1, 'computer', 'computer'),
+(52, 'eat', ''),
+(38, 'from', ''),
+(10, 'girl', 'girl'),
+(20, 'good', ''),
+(28, 'good morning', ''),
+(26, 'goodbye', ''),
+(34, 'he', ''),
+(37, 'he', ''),
+(44, 'He is', ''),
+(54, 'He is eats an apple', ''),
+(55, 'He is eats an orange', ''),
+(39, 'I', ''),
+(43, 'I am', ''),
+(31, 'is', ''),
+(11, 'man', 'man'),
+(21, 'morning', ''),
+(36, 'my', ''),
+(15, 'name', ''),
 (2, 'orange', 'orange'),
 (8, 'piano', 'piano'),
+(23, 'refrigerator', 'refrigerator'),
+(35, 'she', ''),
+(53, 'She eats an apple', ''),
+(45, 'Speak', ''),
 (3, 'table', 'table'),
-(6, 'tv', 'tvmonitor');
+(24, 'thanks', ''),
+(27, 'thanks you', ''),
+(6, 'tv', 'tvmonitor'),
+(16, 'what', ''),
+(14, 'what you name', ''),
+(29, 'what your name?', ''),
+(12, 'woman', 'woman'),
+(25, 'you', ''),
+(17, 'your', '');
+
+--
 
 -- --------------------------------------------------------
 
@@ -132,14 +173,39 @@ CREATE TABLE IF NOT EXISTS `trivias` (
 -- Volcado de datos para la tabla `trivias`
 --
 
+--
+-- Dumping data for table `trivias`
+--
+
 INSERT INTO `trivias` (`id`, `pregunta`, `opcion_a`, `opcion_b`, `opcion_c`, `opcion_d`, `respuesta_correcta`) VALUES
 (1, '¿Ordenador en inglés?', 2, 3, 4, 1, 1),
 (2, 'La combinación de amarillo y rojo da ...', 3, 2, 1, 5, 2),
 (3, 'A Sir Isaac Newton lo golpeó una ...', 1, 3, 5, 7, 7),
 (4, 'Beethoven tocaba el ...', 8, 3, 2, 7, 8),
-(5, 'Cuando me quiero relajar un rato, me pongo a leer un ... de aventuras.', 2, 5, 6, 7, 5);
-
--- --------------------------------------------------------
+(5, 'Cuando me quiero relajar un rato, me pongo a leer un ... de aventuras.', 2, 5, 6, 7, 5),
+(6, '¿Cual es tu nombre?', 29, 28, 15, 14, 29),
+(7, 'nombre', 15, 2, 10, 25, 15),
+(8, 'tu o usted ', 6, 25, 17, 26, 25),
+(9, 'Yo soy ó Yo estoy', 9, 39, 41, 43, 43),
+(10, 'Cuál o Qué', 20, 17, 16, 33, 16),
+(11, 'El es ó El esta', 43, 44, 34, 35, 44),
+(12, 'Ella', 37, 35, 36, 11, 35),
+(13, 'Hablar', 44, 23, 45, 20, 45),
+(14, 'Un hombre', 15, 11, 46, 10, 46),
+(15, 'Naranja', 2, 37, 17, 7, 2),
+(16, 'Un o Una', 31, 41, 40, 35, 40),
+(17, 'Un o Una', 42, 46, 39, 34, 42),
+(18, 'Una naranja', 46, 2, 47, 43, 47),
+(19, 'Una manzana', 47, 49, 7, 51, 51),
+(20, 'Una chica', 49, 10, 50, 51, 50),
+(21, 'Un chico', 46, 49, 48, 35, 49),
+(22, 'niña o chica', 10, 48, 9, 27, 10),
+(23, 'comer', 1, 8, 52, 25, 52),
+(24, 'Ella esta comiendo una manzana', 53, 54, 55, 28, 53),
+(25, 'El esta comiendo una naranja', 54, 55, 28, 27, 55),
+(26, 'El esta comiendo una manzana', 29, 54, 53, 27, 54),
+(27, 'Gracias', 27, 50, 26, 29, 27),
+(28, 'adiós', 28, 27, 26, 52, 26);
 
 --
 -- Estructura de tabla para la tabla `trivias_retos`
