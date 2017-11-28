@@ -2,7 +2,7 @@
     include '../config.php';
     header('Content-Type: application/json; charset=ISO-8859-1');
     // Consulta
-    $sql = "SELECT * FROM `palabras` ORDER BY RAND() LIMIT 1";
+    $sql = "SELECT * FROM `palabras` ORDER BY RAND() WHERE palabra_ingles_yolo IS NOT NULL LIMIT 1";
     $result = $conn->query($sql);
     //Manejo de resultados
     $retorno = $result->fetch_assoc();
