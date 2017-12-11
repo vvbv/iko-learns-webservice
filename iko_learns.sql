@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 28, 2017 at 03:51 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Host: localhost
+-- Generation Time: Dec 11, 2017 at 08:09 PM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -64,20 +64,20 @@ CREATE TABLE `palabras` (
 --
 
 INSERT INTO `palabras` (`id`, `palabra_ingles`, `palabra_ingles_yolo`) VALUES
-(40, 'A', null),
-(49, 'A boy', null),
-(50, 'A girl', null),
-(46, 'A man', null),
-(48, 'A woman', null),
-(41, 'am', null),
-(42, 'An', null),
-(51, 'An apple', null),
-(47, 'An orange', null),
-(7, 'Apple', null),
-(33, 'are', null),
+(40, 'A', 'null'),
+(49, 'A boy', 'null'),
+(50, 'A girl', 'null'),
+(46, 'A man', 'null'),
+(48, 'A woman', 'null'),
+(41, 'am', 'null'),
+(42, 'An', 'null'),
+(51, 'An apple', 'null'),
+(47, 'An orange', 'null'),
+(7, 'apple', 'apple'),
+(33, 'are', 'null'),
 (56, 'bed', 'bed'),
-(5, 'book', null),
-(9, 'boy', null),
+(5, 'book', 'book'),
+(9, 'boy', 'null'),
 (57, 'car', 'car'),
 (61, 'cellphone', 'cell_phone'),
 (4, 'chair', 'chair'),
@@ -85,43 +85,43 @@ INSERT INTO `palabras` (`id`, `palabra_ingles`, `palabra_ingles_yolo`) VALUES
 (1, 'computer', 'computer'),
 (58, 'cup', 'cup'),
 (59, 'dog', 'dog'),
-(52, 'eat', null),
-(38, 'from', null),
-(10, 'girl', null),
-(20, 'good', null),
-(28, 'good morning', null),
-(26, 'goodbye', null),
-(34, 'he', null),
-(37, 'he', null),
-(54, 'He eats an apple', null),
-(44, 'He is', null),
-(55, 'He is eats an orange', null),
-(39, 'I', null),
-(43, 'I am', null),
-(31, 'is', null),
+(52, 'eat', 'null'),
+(38, 'from', 'null'),
+(10, 'girl', 'girl'),
+(20, 'good', 'null'),
+(28, 'good morning', 'null'),
+(26, 'goodbye', 'null'),
+(34, 'he', 'null'),
+(37, 'he', 'null'),
+(54, 'He eats an apple', 'null'),
+(44, 'He is', 'null'),
+(55, 'He is eats an orange', 'null'),
+(39, 'I', 'null'),
+(43, 'I am', 'null'),
+(31, 'is', 'null'),
 (60, 'laptop', 'laptop'),
-(11, 'man', null),
-(21, 'morning', null),
+(11, 'man', 'man'),
+(21, 'morning', 'null'),
 (67, 'motorbike', 'motorbike'),
-(36, 'my', null),
-(15, 'name', null),
-(2, 'orange', null),
-(8, 'piano', null),
+(36, 'my', 'null'),
+(15, 'name', 'null'),
+(2, 'orange', 'orange'),
+(8, 'piano', 'piano'),
 (23, 'refrigerator', 'refrigerator'),
 (69, 'scissors', 'scissors'),
-(35, 'she', null),
-(53, 'She eats an apple', null),
-(45, 'Speak', null),
+(35, 'she', 'null'),
+(53, 'She eats an apple', 'null'),
+(45, 'Speak', 'null'),
 (3, 'table', 'table'),
-(24, 'thanks', null),
-(27, 'thanks you', null),
+(24, 'thanks', 'null'),
+(27, 'thanks you', 'null'),
 (6, 'tv', 'tvmonitor'),
-(16, 'what', null),
-(14, 'what you name', null),
-(29, 'what your name?', null),
-(12, 'woman', null),
-(25, 'you', null),
-(17, 'your', null);
+(16, 'what', 'null'),
+(14, 'what you name', 'null'),
+(29, 'what your name?', 'null'),
+(12, 'woman', 'woman'),
+(25, 'you', 'null'),
+(17, 'your', 'null');
 
 -- --------------------------------------------------------
 
@@ -156,17 +156,15 @@ DROP TABLE IF EXISTS `puntos`;
 CREATE TABLE `puntos` (
   `id` bigint(20) NOT NULL,
   `id_usuario` bigint(20) NOT NULL,
-  `puntos` int(11) NOT NULL,
-  `fecha_hora_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `puntos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `puntos`
 --
 
-INSERT INTO `puntos` (`id`, `id_usuario`, `puntos`, `fecha_hora_registro`) VALUES
-(1, 1, 126080, '2017-11-19 04:51:30'),
-(2, 2, 55, '2017-11-19 05:18:21');
+INSERT INTO `puntos` (`id`, `id_usuario`, `puntos`) VALUES
+(1, 1, 90);
 
 -- --------------------------------------------------------
 
@@ -213,9 +211,9 @@ INSERT INTO `trivias` (`id`, `pregunta`, `opcion_a`, `opcion_b`, `opcion_c`, `op
 (21, 'Un chico', 46, 49, 48, 35, 49),
 (22, 'niña o chica', 10, 48, 9, 27, 10),
 (23, 'comer', 1, 8, 52, 25, 52),
-(24, 'Ella esta comiendo una manzana', 53, 54, 55, 28, 53),
-(25, 'El esta comiendo una naranja', 54, 55, 28, 27, 55),
-(26, 'El esta comiendo una manzana', 29, 54, 53, 27, 54),
+(24, 'Ella come una manzana', 53, 54, 55, 28, 53),
+(25, 'El come una naranja', 54, 55, 28, 27, 55),
+(26, 'El come una manzana', 29, 54, 53, 27, 54),
 (27, 'Gracias', 27, 50, 26, 29, 27),
 (28, 'adiós', 28, 27, 26, 52, 26);
 
@@ -254,15 +252,15 @@ CREATE TRIGGER `electorAutomaticoTrivias` BEFORE INSERT ON `trivias_retos` FOR E
     DECLARE id_ronda_5 BIGINT;
 
 	SET id_ronda_1 = (SELECT id FROM trivias ORDER BY RAND() LIMIT 1);
-
+    
 	SET id_ronda_2 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 ORDER BY RAND() LIMIT 1);
-
+    
 	SET id_ronda_3 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 AND trivias.id <> id_ronda_2 ORDER BY RAND() LIMIT 1);
-
+    
 	SET id_ronda_4 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 AND trivias.id <> id_ronda_2 AND trivias.id <> id_ronda_3 ORDER BY RAND() LIMIT 1);
-
+    
 	SET id_ronda_5 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 AND trivias.id <> id_ronda_2 AND trivias.id <> id_ronda_3 AND trivias.id <> id_ronda_4 ORDER BY RAND() LIMIT 1);
-
+	
     SET NEW.id_ronda_1 = id_ronda_1;
     SET NEW.id_ronda_2 = id_ronda_2;
     SET NEW.id_ronda_3 = id_ronda_3;
@@ -316,7 +314,6 @@ CREATE TABLE `usuarios` (
   `nombres` varchar(100) DEFAULT NULL,
   `apellidos` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `nivel` bigint(20) NOT NULL DEFAULT '0',
   `fecha_hora_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -324,10 +321,9 @@ CREATE TABLE `usuarios` (
 -- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `id_facebook`, `username`, `nombres`, `apellidos`, `password`, `nivel`, `fecha_hora_registro`) VALUES
-(1, '123456789', NULL, NULL, NULL, NULL, 106, '2017-11-04 23:29:13'),
-(2, '987654321', NULL, NULL, NULL, NULL, 0, '2017-11-04 23:29:13'),
-(15, '9512357', NULL, NULL, NULL, NULL, 0, '2017-11-19 06:33:45');
+INSERT INTO `usuarios` (`id`, `id_facebook`, `username`, `nombres`, `apellidos`, `password`, `fecha_hora_registro`) VALUES
+(1, '123456789', NULL, NULL, NULL, NULL, '2017-11-04 23:29:13'),
+(2, '987654321', NULL, NULL, NULL, NULL, '2017-11-04 23:29:13');
 
 -- --------------------------------------------------------
 
@@ -350,6 +346,19 @@ CREATE TABLE `usuarios_powerups` (
 INSERT INTO `usuarios_powerups` (`user_id`, `power_id`, `fecha`, `cantidad`) VALUES
 (2, 1, '2017-11-06 00:00:00', 2),
 (2, 2, '2017-11-06 00:00:00', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vidas`
+--
+
+DROP TABLE IF EXISTS `vidas`;
+CREATE TABLE `vidas` (
+  `id` bigint(20) NOT NULL,
+  `id_usuario` bigint(20) NOT NULL,
+  `vidas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -380,7 +389,6 @@ ALTER TABLE `powerups`
 --
 ALTER TABLE `puntos`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_usuario_2` (`id_usuario`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
@@ -423,8 +431,7 @@ ALTER TABLE `trivia_reto_ronda`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_facebook` (`id_facebook`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `nombres` (`nombres`);
 
 --
 -- Indexes for table `usuarios_powerups`
@@ -433,6 +440,13 @@ ALTER TABLE `usuarios_powerups`
   ADD PRIMARY KEY (`user_id`,`power_id`),
   ADD UNIQUE KEY `user_id` (`user_id`,`power_id`),
   ADD KEY `power_id` (`power_id`);
+
+--
+-- Indexes for table `vidas`
+--
+ALTER TABLE `vidas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -448,13 +462,13 @@ ALTER TABLE `numeros_ronda`
 -- AUTO_INCREMENT for table `palabras`
 --
 ALTER TABLE `palabras`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `puntos`
 --
 ALTER TABLE `puntos`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `trivias`
@@ -484,7 +498,13 @@ ALTER TABLE `trivia_reto_ronda`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vidas`
+--
+ALTER TABLE `vidas`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -531,6 +551,12 @@ ALTER TABLE `trivia_reto_ronda`
 ALTER TABLE `usuarios_powerups`
   ADD CONSTRAINT `usuarios_powerups_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`id`),
   ADD CONSTRAINT `usuarios_powerups_ibfk_2` FOREIGN KEY (`power_id`) REFERENCES `powerups` (`id_powerup`);
+
+--
+-- Constraints for table `vidas`
+--
+ALTER TABLE `vidas`
+  ADD CONSTRAINT `fk_vidas_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
