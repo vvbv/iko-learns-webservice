@@ -1,7 +1,11 @@
 <?php 
 
+    //error_reporting(-1);
+    //ini_set('display_errors', 'On');
+
     include '../config.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    //header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
 
     $sql = "";
     
@@ -120,11 +124,61 @@
     }
 
     $result = $conn->query($sql);
-    echo json_encode(
+    $idReto = $conn->insert_id;
+
+    $sql = "SELECT * FROM trivias_retos WHERE id = $idReto";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+
+    $idRonda1 = $row['id_ronda_1'];
+    $idRonda2 = $row['id_ronda_2'];
+    $idRonda3 = $row['id_ronda_3'];
+    $idRonda4 = $row['id_ronda_4'];
+    $idRonda5 = $row['id_ronda_5'];
+
+    $sql = "SELECT * FROM trivias WHERE id = '$idRonda1'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $datosRonda1Array = array_map("utf8_encode", $row );
+    $datosRonda1 = json_encode($datosRonda1Array);
+
+    $sql = "SELECT * FROM trivias WHERE id = '$idRonda2'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $datosRonda2Array = array_map("utf8_encode", $row );
+    $datosRonda2 = json_encode($datosRonda2Array);
+
+    $sql = "SELECT * FROM trivias WHERE id = '$idRonda3'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $datosRonda3Array = array_map("utf8_encode", $row );
+    $datosRonda3 = json_encode($datosRonda3Array);
+
+    $sql = "SELECT * FROM trivias WHERE id = '$idRonda4'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $datosRonda4Array = array_map("utf8_encode", $row );
+    $datosRonda4 = json_encode($datosRonda4Array);
+
+    $sql = "SELECT * FROM trivias WHERE id = '$idRonda5'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $datosRonda5Array = array_map("utf8_encode", $row );
+    $datosRonda5 = json_encode($datosRonda5Array);
+
+    $reto = json_encode(
                 array(
                         'codError' => '0',
-                        'error' => 'Reto creado.'
-                    )
-                );
+                        'error' => 'Reto creado.',
+                        'idReto' => $idReto,
+                        'ronda1' => $datosRonda1Array,
+                        'ronda2' => $datosRonda2Array,
+                        'ronda3' => $datosRonda3Array,
+                        'ronda4' => $datosRonda4Array,
+                        'ronda5' => $datosRonda5Array
+                )
+            );
+
+    echo $reto;
 
 ?>
