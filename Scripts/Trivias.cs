@@ -28,6 +28,22 @@
     public string id_retador;
   }
 
+  [SerializeField]
+  class CrearReto{
+    public CrearReto(string idReto, Palabra ronda1, Palabra ronda2, Palabra ronda3, Palabra ronda4){
+      this.idReto = idReto;
+      this.ronda1 = ronda1;
+      this.ronda2 = ronda2;
+      this.ronda3 = ronda3;
+      this.ronda4 = ronda4;
+    }
+    public string idReto;
+    public Palabra ronda1;
+    public Palabra ronda2;
+    public Palabra ronda3;
+    public Palabra ronda4;
+  }
+
 
   public class Trivias : MonoBehaviour
   {
