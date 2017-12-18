@@ -7,6 +7,51 @@ using System.Net;
 using System.IO;
 using System.Text;
 
+
+  [SerializeField]
+  class RegistrarPuntos{
+    public RegistrarPuntos(string id_facebook, int puntos, int nivel){
+      this.id_facebook = id_facebook;
+      this.puntos = puntos;
+      this.nivel = nivel;
+    }
+    public string id_facebook;
+    public int puntos;
+    public int nivel;
+  }
+
+  [SerializeField]
+  class ObtenerProgreso{
+    public ObtenerProgreso(string id_usuario, int nivel, int progreso){
+      this.id_usuario = id_usuario;
+      this.nivel = nivel;
+      this.progreso = progreso;
+    }
+    public string id_usuario;
+    public int nivel;
+    public int progreso;
+  }
+
+  [SerializeField]
+  class ObtenerPuntos{
+    public ObtenerPuntos(string id, int puntos){
+      this.id = id;
+      this.puntos = puntos;
+    }
+    public string id;
+    public int puntos;
+  }
+
+  [SerializeField]
+  class ObtenerTop{
+    public ObtenerTop(string id_usuario, int puntos){
+      this.id_usuario = id_usuario;
+      this.puntos = puntos;
+    }
+    public string id_usuario;
+    public int puntos;
+  }
+
 public class Usuarios : MonoBehaviour
 {
   public string server = "http://localhost/iko-learns/usuarios";
@@ -85,6 +130,7 @@ public class Usuarios : MonoBehaviour
   public void ObtenerUsuario(string id_fb)
   {
     StartCoroutine(requestObtenerUsuario(id_fb));
+
   }
 
   public void RegistrarUsuario(string id_fb, string username, string nombres, string apellidos, string password, int nivel)

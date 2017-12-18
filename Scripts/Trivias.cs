@@ -18,9 +18,20 @@
     public string respuesta_correcta;
   }
 
+  [SerializeField]
+  class ObtenerRetosDisponibles{
+    public ObtenerRetosDisponibles(string id_reto, string id_retador){
+      this.id_reto = id_reto;
+      this.id_retador = id_retador;
+    }
+    public string id_reto;
+    public string id_retador;
+  }
+
+
   public class Trivias : MonoBehaviour
   {
-    public string server = "http://localhost/iko-learns/trivias";
+    public string server = "http://10.42.0.1/iko-learns/trivias";
 
     private IEnumerator requestObtenerTrivia()
     {
