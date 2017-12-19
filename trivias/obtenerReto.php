@@ -7,6 +7,7 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 	
+	$idReto = $row['id'];
 	$idRonda1 = $row['id_ronda_1'];
     $idRonda2 = $row['id_ronda_2'];
     $idRonda3 = $row['id_ronda_3'];
@@ -49,7 +50,7 @@
                 array(
 						'codError' => '0',
                         'error' => '',
-                        'idReto' => $row['id'],
+                        'idReto' => $idReto,
                         'ronda1' => $datosRonda1Array,
                         'ronda2' => $datosRonda2Array,
                         'ronda3' => $datosRonda3Array,
