@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-12-2017 a las 01:32:59
+-- Tiempo de generación: 19-12-2017 a las 01:43:42
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.11
 
@@ -54,7 +54,7 @@ INSERT INTO `numeros_ronda` (`id`, `numero_ronda`, `descripcion`) VALUES
 CREATE TABLE `palabras` (
   `id` bigint(20) NOT NULL,
   `palabra_ingles` varchar(80) NOT NULL,
-  `palabra_ingles_yolo` varchar(80) NOT NULL
+  `palabra_ingles_yolo` varchar(80) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -62,20 +62,20 @@ CREATE TABLE `palabras` (
 --
 
 INSERT INTO `palabras` (`id`, `palabra_ingles`, `palabra_ingles_yolo`) VALUES
-(40, 'A', ''),
-(49, 'A boy', ''),
-(50, 'A girl', ''),
-(46, 'A man', ''),
-(48, 'A woman', ''),
-(41, 'am', ''),
-(42, 'An', ''),
-(51, 'An apple', ''),
-(47, 'An orange', ''),
+(40, 'A', NULL),
+(49, 'A boy', NULL),
+(50, 'A girl', NULL),
+(46, 'A man', NULL),
+(48, 'A woman', NULL),
+(41, 'am', NULL),
+(42, 'An', NULL),
+(51, 'An apple', NULL),
+(47, 'An orange', NULL),
 (7, 'apple', 'apple'),
-(33, 'are', ''),
+(33, 'are', NULL),
 (56, 'bed', 'bed'),
 (5, 'book', 'book'),
-(9, 'boy', ''),
+(9, 'boy', NULL),
 (57, 'car', 'car'),
 (61, 'cellphone', 'cell_phone'),
 (4, 'chair', 'chair'),
@@ -83,43 +83,43 @@ INSERT INTO `palabras` (`id`, `palabra_ingles`, `palabra_ingles_yolo`) VALUES
 (1, 'computer', 'computer'),
 (58, 'cup', 'cup'),
 (59, 'dog', 'dog'),
-(52, 'eat', ''),
-(38, 'from', ''),
+(52, 'eat', NULL),
+(38, 'from', NULL),
 (10, 'girl', 'girl'),
-(20, 'good', ''),
-(28, 'good morning', ''),
-(26, 'goodbye', ''),
-(34, 'he', ''),
-(37, 'he', ''),
-(54, 'He eats an apple', ''),
-(44, 'He is', ''),
-(55, 'He is eats an orange', ''),
-(39, 'I', ''),
-(43, 'I am', ''),
-(31, 'is', ''),
+(20, 'good', NULL),
+(28, 'good morning', NULL),
+(26, 'goodbye', NULL),
+(34, 'he', NULL),
+(37, 'he', NULL),
+(54, 'He eats an apple', NULL),
+(44, 'He is', NULL),
+(55, 'He is eats an orange', NULL),
+(39, 'I', NULL),
+(43, 'I am', NULL),
+(31, 'is', NULL),
 (60, 'laptop', 'laptop'),
 (11, 'man', 'man'),
-(21, 'morning', ''),
+(21, 'morning', NULL),
 (67, 'motorbike', 'motorbike'),
-(36, 'my', ''),
-(15, 'name', ''),
+(36, 'my', NULL),
+(15, 'name', NULL),
 (2, 'orange', 'orange'),
 (8, 'piano', 'piano'),
 (23, 'refrigerator', 'refrigerator'),
 (69, 'scissors', 'scissors'),
-(35, 'she', ''),
-(53, 'She eats an apple', ''),
-(45, 'Speak', ''),
+(35, 'she', NULL),
+(53, 'She eats an apple', NULL),
+(45, 'Speak', NULL),
 (3, 'table', 'table'),
-(24, 'thanks', ''),
-(27, 'thanks you', ''),
+(24, 'thanks', NULL),
+(27, 'thanks you', NULL),
 (6, 'tv', 'tvmonitor'),
-(16, 'what', ''),
-(14, 'what you name', ''),
-(29, 'what your name?', ''),
+(16, 'what', NULL),
+(14, 'what you name', NULL),
+(29, 'what your name?', NULL),
 (12, 'woman', 'woman'),
-(25, 'you', ''),
-(17, 'your', '');
+(25, 'you', NULL),
+(17, 'your', NULL);
 
 -- --------------------------------------------------------
 
