@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.5
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 11, 2017 at 08:09 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 19-12-2017 a las 01:32:59
+-- Versión del servidor: 10.1.28-MariaDB
+-- Versión de PHP: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,16 +19,15 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `iko_learns`
+-- Base de datos: `iko_learns`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `numeros_ronda`
+-- Estructura de tabla para la tabla `numeros_ronda`
 --
 
-DROP TABLE IF EXISTS `numeros_ronda`;
 CREATE TABLE `numeros_ronda` (
   `id` bigint(20) NOT NULL,
   `numero_ronda` int(11) NOT NULL,
@@ -36,7 +35,7 @@ CREATE TABLE `numeros_ronda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `numeros_ronda`
+-- Volcado de datos para la tabla `numeros_ronda`
 --
 
 INSERT INTO `numeros_ronda` (`id`, `numero_ronda`, `descripcion`) VALUES
@@ -49,10 +48,9 @@ INSERT INTO `numeros_ronda` (`id`, `numero_ronda`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `palabras`
+-- Estructura de tabla para la tabla `palabras`
 --
 
-DROP TABLE IF EXISTS `palabras`;
 CREATE TABLE `palabras` (
   `id` bigint(20) NOT NULL,
   `palabra_ingles` varchar(80) NOT NULL,
@@ -60,24 +58,24 @@ CREATE TABLE `palabras` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `palabras`
+-- Volcado de datos para la tabla `palabras`
 --
 
 INSERT INTO `palabras` (`id`, `palabra_ingles`, `palabra_ingles_yolo`) VALUES
-(40, 'A', null),
-(49, 'A boy', null),
-(50, 'A girl', null),
-(46, 'A man', null),
-(48, 'A woman', null),
-(41, 'am', null),
-(42, 'An', null),
-(51, 'An apple', null),
-(47, 'An orange', null),
+(40, 'A', ''),
+(49, 'A boy', ''),
+(50, 'A girl', ''),
+(46, 'A man', ''),
+(48, 'A woman', ''),
+(41, 'am', ''),
+(42, 'An', ''),
+(51, 'An apple', ''),
+(47, 'An orange', ''),
 (7, 'apple', 'apple'),
-(33, 'are', null),
+(33, 'are', ''),
 (56, 'bed', 'bed'),
 (5, 'book', 'book'),
-(9, 'boy', null),
+(9, 'boy', ''),
 (57, 'car', 'car'),
 (61, 'cellphone', 'cell_phone'),
 (4, 'chair', 'chair'),
@@ -85,51 +83,50 @@ INSERT INTO `palabras` (`id`, `palabra_ingles`, `palabra_ingles_yolo`) VALUES
 (1, 'computer', 'computer'),
 (58, 'cup', 'cup'),
 (59, 'dog', 'dog'),
-(52, 'eat', null),
-(38, 'from', null),
+(52, 'eat', ''),
+(38, 'from', ''),
 (10, 'girl', 'girl'),
-(20, 'good', null),
-(28, 'good morning', null),
-(26, 'goodbye', null),
-(34, 'he', null),
-(37, 'he', null),
-(54, 'He eats an apple', null),
-(44, 'He is', null),
-(55, 'He is eats an orange', null),
-(39, 'I', null),
-(43, 'I am', null),
-(31, 'is', null),
+(20, 'good', ''),
+(28, 'good morning', ''),
+(26, 'goodbye', ''),
+(34, 'he', ''),
+(37, 'he', ''),
+(54, 'He eats an apple', ''),
+(44, 'He is', ''),
+(55, 'He is eats an orange', ''),
+(39, 'I', ''),
+(43, 'I am', ''),
+(31, 'is', ''),
 (60, 'laptop', 'laptop'),
 (11, 'man', 'man'),
-(21, 'morning', null),
+(21, 'morning', ''),
 (67, 'motorbike', 'motorbike'),
-(36, 'my', null),
-(15, 'name', null),
+(36, 'my', ''),
+(15, 'name', ''),
 (2, 'orange', 'orange'),
 (8, 'piano', 'piano'),
 (23, 'refrigerator', 'refrigerator'),
 (69, 'scissors', 'scissors'),
-(35, 'she', null),
-(53, 'She eats an apple', null),
-(45, 'Speak', null),
+(35, 'she', ''),
+(53, 'She eats an apple', ''),
+(45, 'Speak', ''),
 (3, 'table', 'table'),
-(24, 'thanks', null),
-(27, 'thanks you', null),
+(24, 'thanks', ''),
+(27, 'thanks you', ''),
 (6, 'tv', 'tvmonitor'),
-(16, 'what', null),
-(14, 'what you name', null),
-(29, 'what your name?', null),
+(16, 'what', ''),
+(14, 'what you name', ''),
+(29, 'what your name?', ''),
 (12, 'woman', 'woman'),
-(25, 'you', null),
-(17, 'your', null);
+(25, 'you', ''),
+(17, 'your', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `powerups`
+-- Estructura de tabla para la tabla `powerups`
 --
 
-DROP TABLE IF EXISTS `powerups`;
 CREATE TABLE `powerups` (
   `id_powerup` int(11) NOT NULL,
   `accion` varchar(45) DEFAULT NULL,
@@ -139,7 +136,7 @@ CREATE TABLE `powerups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `powerups`
+-- Volcado de datos para la tabla `powerups`
 --
 
 INSERT INTO `powerups` (`id_powerup`, `accion`, `icono`, `nombre`, `descripcion`) VALUES
@@ -149,10 +146,9 @@ INSERT INTO `powerups` (`id_powerup`, `accion`, `icono`, `nombre`, `descripcion`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `puntos`
+-- Estructura de tabla para la tabla `puntos`
 --
 
-DROP TABLE IF EXISTS `puntos`;
 CREATE TABLE `puntos` (
   `id` bigint(20) NOT NULL,
   `id_usuario` bigint(20) NOT NULL,
@@ -160,7 +156,7 @@ CREATE TABLE `puntos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `puntos`
+-- Volcado de datos para la tabla `puntos`
 --
 
 INSERT INTO `puntos` (`id`, `id_usuario`, `puntos`) VALUES
@@ -169,10 +165,9 @@ INSERT INTO `puntos` (`id`, `id_usuario`, `puntos`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trivias`
+-- Estructura de tabla para la tabla `trivias`
 --
 
-DROP TABLE IF EXISTS `trivias`;
 CREATE TABLE `trivias` (
   `id` bigint(20) NOT NULL,
   `pregunta` text NOT NULL,
@@ -184,7 +179,7 @@ CREATE TABLE `trivias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `trivias`
+-- Volcado de datos para la tabla `trivias`
 --
 
 INSERT INTO `trivias` (`id`, `pregunta`, `opcion_a`, `opcion_b`, `opcion_c`, `opcion_d`, `respuesta_correcta`) VALUES
@@ -220,10 +215,9 @@ INSERT INTO `trivias` (`id`, `pregunta`, `opcion_a`, `opcion_b`, `opcion_c`, `op
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trivias_retos`
+-- Estructura de tabla para la tabla `trivias_retos`
 --
 
-DROP TABLE IF EXISTS `trivias_retos`;
 CREATE TABLE `trivias_retos` (
   `id` bigint(20) NOT NULL,
   `id_usuario_retador` bigint(20) NOT NULL,
@@ -239,9 +233,8 @@ CREATE TABLE `trivias_retos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Triggers `trivias_retos`
+-- Disparadores `trivias_retos`
 --
-DROP TRIGGER IF EXISTS `electorAutomaticoTrivias`;
 DELIMITER $$
 CREATE TRIGGER `electorAutomaticoTrivias` BEFORE INSERT ON `trivias_retos` FOR EACH ROW BEGIN
 
@@ -274,10 +267,9 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trivias_solo_resueltas`
+-- Estructura de tabla para la tabla `trivias_solo_resueltas`
 --
 
-DROP TABLE IF EXISTS `trivias_solo_resueltas`;
 CREATE TABLE `trivias_solo_resueltas` (
   `id` bigint(20) NOT NULL,
   `id_usuario` bigint(20) NOT NULL,
@@ -288,10 +280,9 @@ CREATE TABLE `trivias_solo_resueltas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trivia_reto_ronda`
+-- Estructura de tabla para la tabla `trivia_reto_ronda`
 --
 
-DROP TABLE IF EXISTS `trivia_reto_ronda`;
 CREATE TABLE `trivia_reto_ronda` (
   `id` bigint(20) NOT NULL,
   `id_trivia` bigint(20) NOT NULL,
@@ -303,10 +294,9 @@ CREATE TABLE `trivia_reto_ronda` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` bigint(20) NOT NULL,
   `id_facebook` varchar(120) NOT NULL,
@@ -314,24 +304,25 @@ CREATE TABLE `usuarios` (
   `nombres` varchar(100) DEFAULT NULL,
   `apellidos` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
+  `nivel` int(11) NOT NULL,
   `fecha_hora_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `id_facebook`, `username`, `nombres`, `apellidos`, `password`, `fecha_hora_registro`) VALUES
-(1, '123456789', NULL, NULL, NULL, NULL, '2017-11-04 23:29:13'),
-(2, '987654321', NULL, NULL, NULL, NULL, '2017-11-04 23:29:13');
+INSERT INTO `usuarios` (`id`, `id_facebook`, `username`, `nombres`, `apellidos`, `password`, `nivel`, `fecha_hora_registro`) VALUES
+(1, '123456789', NULL, NULL, NULL, NULL, 0, '2017-11-04 23:29:13'),
+(2, '987654321', NULL, NULL, NULL, NULL, 0, '2017-11-04 23:29:13'),
+(3, '1533632516732830', 'user1533632516732830', 'xx', 'xx', 'xx', 0, '2017-12-19 00:29:24');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios_powerups`
+-- Estructura de tabla para la tabla `usuarios_powerups`
 --
 
-DROP TABLE IF EXISTS `usuarios_powerups`;
 CREATE TABLE `usuarios_powerups` (
   `user_id` bigint(20) NOT NULL,
   `power_id` int(11) NOT NULL,
@@ -340,7 +331,7 @@ CREATE TABLE `usuarios_powerups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuarios_powerups`
+-- Volcado de datos para la tabla `usuarios_powerups`
 --
 
 INSERT INTO `usuarios_powerups` (`user_id`, `power_id`, `fecha`, `cantidad`) VALUES
@@ -350,10 +341,9 @@ INSERT INTO `usuarios_powerups` (`user_id`, `power_id`, `fecha`, `cantidad`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vidas`
+-- Estructura de tabla para la tabla `vidas`
 --
 
-DROP TABLE IF EXISTS `vidas`;
 CREATE TABLE `vidas` (
   `id` bigint(20) NOT NULL,
   `id_usuario` bigint(20) NOT NULL,
@@ -361,38 +351,38 @@ CREATE TABLE `vidas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `numeros_ronda`
+-- Indices de la tabla `numeros_ronda`
 --
 ALTER TABLE `numeros_ronda`
   ADD PRIMARY KEY (`id`),
   ADD KEY `numero_ronda` (`numero_ronda`);
 
 --
--- Indexes for table `palabras`
+-- Indices de la tabla `palabras`
 --
 ALTER TABLE `palabras`
   ADD PRIMARY KEY (`id`),
   ADD KEY `palabra_ingles` (`palabra_ingles`,`palabra_ingles_yolo`);
 
 --
--- Indexes for table `powerups`
+-- Indices de la tabla `powerups`
 --
 ALTER TABLE `powerups`
   ADD PRIMARY KEY (`id_powerup`);
 
 --
--- Indexes for table `puntos`
+-- Indices de la tabla `puntos`
 --
 ALTER TABLE `puntos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indexes for table `trivias`
+-- Indices de la tabla `trivias`
 --
 ALTER TABLE `trivias`
   ADD PRIMARY KEY (`id`),
@@ -404,14 +394,14 @@ ALTER TABLE `trivias`
   ADD KEY `respuesta_correcta` (`respuesta_correcta`);
 
 --
--- Indexes for table `trivias_retos`
+-- Indices de la tabla `trivias_retos`
 --
 ALTER TABLE `trivias_retos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_usuario_retador` (`id_usuario_retador`);
 
 --
--- Indexes for table `trivias_solo_resueltas`
+-- Indices de la tabla `trivias_solo_resueltas`
 --
 ALTER TABLE `trivias_solo_resueltas`
   ADD PRIMARY KEY (`id`),
@@ -419,7 +409,7 @@ ALTER TABLE `trivias_solo_resueltas`
   ADD KEY `id_trivia` (`id_trivia`);
 
 --
--- Indexes for table `trivia_reto_ronda`
+-- Indices de la tabla `trivia_reto_ronda`
 --
 ALTER TABLE `trivia_reto_ronda`
   ADD PRIMARY KEY (`id`),
@@ -427,14 +417,14 @@ ALTER TABLE `trivia_reto_ronda`
   ADD KEY `id_trivia_2` (`id_trivia`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nombres` (`nombres`);
 
 --
--- Indexes for table `usuarios_powerups`
+-- Indices de la tabla `usuarios_powerups`
 --
 ALTER TABLE `usuarios_powerups`
   ADD PRIMARY KEY (`user_id`,`power_id`),
@@ -442,82 +432,82 @@ ALTER TABLE `usuarios_powerups`
   ADD KEY `power_id` (`power_id`);
 
 --
--- Indexes for table `vidas`
+-- Indices de la tabla `vidas`
 --
 ALTER TABLE `vidas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `numeros_ronda`
+-- AUTO_INCREMENT de la tabla `numeros_ronda`
 --
 ALTER TABLE `numeros_ronda`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `palabras`
+-- AUTO_INCREMENT de la tabla `palabras`
 --
 ALTER TABLE `palabras`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
--- AUTO_INCREMENT for table `puntos`
+-- AUTO_INCREMENT de la tabla `puntos`
 --
 ALTER TABLE `puntos`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `trivias`
+-- AUTO_INCREMENT de la tabla `trivias`
 --
 ALTER TABLE `trivias`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `trivias_retos`
+-- AUTO_INCREMENT de la tabla `trivias_retos`
 --
 ALTER TABLE `trivias_retos`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT for table `trivias_solo_resueltas`
+-- AUTO_INCREMENT de la tabla `trivias_solo_resueltas`
 --
 ALTER TABLE `trivias_solo_resueltas`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `trivia_reto_ronda`
+-- AUTO_INCREMENT de la tabla `trivia_reto_ronda`
 --
 ALTER TABLE `trivia_reto_ronda`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `vidas`
+-- AUTO_INCREMENT de la tabla `vidas`
 --
 ALTER TABLE `vidas`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `puntos`
+-- Filtros para la tabla `puntos`
 --
 ALTER TABLE `puntos`
   ADD CONSTRAINT `fk_puntos_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
 
 --
--- Constraints for table `trivias`
+-- Filtros para la tabla `trivias`
 --
 ALTER TABLE `trivias`
   ADD CONSTRAINT `trivias_ibfk_1` FOREIGN KEY (`opcion_a`) REFERENCES `palabras` (`id`),
@@ -527,33 +517,33 @@ ALTER TABLE `trivias`
   ADD CONSTRAINT `trivias_ibfk_5` FOREIGN KEY (`respuesta_correcta`) REFERENCES `palabras` (`id`);
 
 --
--- Constraints for table `trivias_retos`
+-- Filtros para la tabla `trivias_retos`
 --
 ALTER TABLE `trivias_retos`
   ADD CONSTRAINT `trivias_retos_ibfk_1` FOREIGN KEY (`id_usuario_retador`) REFERENCES `usuarios` (`id`);
 
 --
--- Constraints for table `trivias_solo_resueltas`
+-- Filtros para la tabla `trivias_solo_resueltas`
 --
 ALTER TABLE `trivias_solo_resueltas`
   ADD CONSTRAINT `trivias_solo_resueltas_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`),
   ADD CONSTRAINT `trivias_solo_resueltas_ibfk_2` FOREIGN KEY (`id_trivia`) REFERENCES `trivias` (`id`);
 
 --
--- Constraints for table `trivia_reto_ronda`
+-- Filtros para la tabla `trivia_reto_ronda`
 --
 ALTER TABLE `trivia_reto_ronda`
   ADD CONSTRAINT `trivia_reto_ronda_ibfk_1` FOREIGN KEY (`id_trivia`) REFERENCES `trivias` (`id`);
 
 --
--- Constraints for table `usuarios_powerups`
+-- Filtros para la tabla `usuarios_powerups`
 --
 ALTER TABLE `usuarios_powerups`
   ADD CONSTRAINT `usuarios_powerups_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`id`),
   ADD CONSTRAINT `usuarios_powerups_ibfk_2` FOREIGN KEY (`power_id`) REFERENCES `powerups` (`id_powerup`);
 
 --
--- Constraints for table `vidas`
+-- Filtros para la tabla `vidas`
 --
 ALTER TABLE `vidas`
   ADD CONSTRAINT `fk_vidas_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);

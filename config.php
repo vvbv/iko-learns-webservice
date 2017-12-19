@@ -2,7 +2,7 @@
 
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $dbname = "iko_learns";
 
     // Crea la conexión con el servidor MySQL
