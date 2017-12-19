@@ -9,8 +9,8 @@
 
     $sql = "";
     
-    $idUsuarioRetadorFacebook = $_GET["id_retador"];
-    $idUsuarioRetadoFacebook  = $_GET["id_retado"];
+    $idUsuarioRetadorFacebook = null;
+    $idUsuarioRetadoFacebook  = null;
 
     $retadorEncontrado = false;
     $retadoEncontrado = false;
@@ -36,6 +36,7 @@
     }
 
     if((isset($_GET["id_retador"])) && (isset($_GET["id_retado"]))){
+		
         if($_GET["id_retador"] == $_GET["id_retado"]){
             echo json_encode(
                     array(
@@ -48,7 +49,8 @@
     }
 
     if((isset($_GET["id_retador"])) && (isset($_GET["id_retado"]))){
-
+		$idUsuarioRetadorFacebook = $_GET["id_retador"];
+		$idUsuarioRetadoFacebook  = $_GET["id_retado"];
         $sql = "SELECT * FROM `usuarios` WHERE `id_facebook` = '$idUsuarioRetadorFacebook'";
         $result = $conn->query($sql);
         $retorno = $result->fetch_assoc();
@@ -82,6 +84,7 @@
         }
 
      }elseif ((isset($_GET["id_retador"])) && !(isset($_GET["id_retado"]))) {
+		$idUsuarioRetadorFacebook = $_GET["id_retador"];
         $sql = "SELECT * FROM `usuarios` WHERE `id_facebook` = '$idUsuarioRetadorFacebook'";
         $result = $conn->query($sql);
         $retorno = $result->fetch_assoc();

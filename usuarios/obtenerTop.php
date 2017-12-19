@@ -10,6 +10,7 @@
             $top, 
             array(
                 'id_usuario' => $row['id_facebook'],
+				'nombres' => $row['nombres'],
                 'puntos' => $row['puntos']
             )
         );
