@@ -9,7 +9,7 @@
 
     while($row = $result->fetch_assoc()){
 		
-		$sql = "SELECT * FROM `usuarios` WHERE `id` = '".$row['id']."'";
+		$sql = "SELECT * FROM `usuarios` WHERE `id` = '".$row['id_usuario_retador']."'";
 		$result2 = $conn->query($sql);
 		$usuario = $result2->fetch_assoc();
 		
