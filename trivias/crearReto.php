@@ -1,7 +1,7 @@
 <?php
 
-    //error_reporting(-1);
-    //ini_set('display_errors', 'On');
+    error_reporting(-1);
+    ini_set('display_errors', 'On');
 
     include '../config.php';
     //header('Content-Type: application/json; charset=UTF-8');
