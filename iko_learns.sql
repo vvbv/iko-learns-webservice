@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-12-2017 a las 01:43:42
+-- Tiempo de generación: 19-12-2017 a las 01:47:33
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.11
 
@@ -85,7 +85,7 @@ INSERT INTO `palabras` (`id`, `palabra_ingles`, `palabra_ingles_yolo`) VALUES
 (59, 'dog', 'dog'),
 (52, 'eat', NULL),
 (38, 'from', NULL),
-(10, 'girl', 'girl'),
+(10, 'girl', NULL),
 (20, 'good', NULL),
 (28, 'good morning', NULL),
 (26, 'goodbye', NULL),
@@ -117,7 +117,7 @@ INSERT INTO `palabras` (`id`, `palabra_ingles`, `palabra_ingles_yolo`) VALUES
 (16, 'what', NULL),
 (14, 'what you name', NULL),
 (29, 'what your name?', NULL),
-(12, 'woman', 'woman'),
+(12, 'woman', NULL),
 (25, 'you', NULL),
 (17, 'your', NULL);
 
