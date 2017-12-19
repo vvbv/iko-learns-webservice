@@ -8,9 +8,15 @@
     $retos = array();
 
     while($row = $result->fetch_assoc()){
+		
+		$sql = "SELECT * FROM `usuarios` WHERE `id` = '".$row['id']."'";
+		$result2 = $conn->query($sql);
+		$usuario = $result2->fetch_assoc();
+		
         $reto = array(
             'id_reto' => $row['id'],
-            'id_retador' => $row['id_retador']
+            'id_retador' => $usuario['id_facebook'],
+			'nombres_retador' => $usuario['nombres']
         );
         array_push($retos, $reto);
     }
