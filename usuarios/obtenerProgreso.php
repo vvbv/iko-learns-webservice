@@ -2,7 +2,7 @@
   
     include '../config.php';
     require '../fx/funcionesExtra.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
 
     $idUsuario = $_GET['id_facebook'];
     

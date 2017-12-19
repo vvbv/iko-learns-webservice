@@ -1,6 +1,6 @@
 <?php
     include '../config.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
     // Consulta
     $sql = "SELECT * FROM `trivias` ORDER BY RAND() LIMIT 1";
     $result = $conn->query($sql);
@@ -35,7 +35,7 @@
     echo json_encode(
         array(
             'id' => $retorno['id'],
-            'pregunta' =>  utf8_encode((string)$retorno['pregunta']),
+            'pregunta' => $retorno['pregunta'],
             'opcion_a' => $opcion_a['palabra_ingles'],
             'opcion_b' => $opcion_b['palabra_ingles'],
             'opcion_c' => $opcion_c['palabra_ingles'],

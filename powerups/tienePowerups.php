@@ -1,6 +1,6 @@
 <?php
     include '../config.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
     
     //verificar si un usuario determinado posee algun tipo de powerups
     //retorno true o false.

@@ -1,14 +1,14 @@
-<?php 
+<?php
 
     //error_reporting(-1);
     //ini_set('display_errors', 'On');
 
     include '../config.php';
-    //header('Content-Type: application/json; charset=ISO-8859-1');
+    //header('Content-Type: application/json; charset=UTF-8');
     header('Content-Type: application/json; charset=UTF-8');
 
     $sql = "";
-    
+
     $idUsuarioRetadorFacebook = null;
     $idUsuarioRetadoFacebook  = null;
 
@@ -36,7 +36,7 @@
     }
 
     if((isset($_GET["id_retador"])) && (isset($_GET["id_retado"]))){
-		
+
         if($_GET["id_retador"] == $_GET["id_retado"]){
             echo json_encode(
                     array(
@@ -110,7 +110,7 @@
                 );
         die();
     };
-   
+
 
     if((isset($_GET["id_retador"])) && (isset($_GET["id_retado"])) && $retadorEncontrado && $retadoEncontrado){
         $sql = "INSERT INTO `trivias_retos`(id_usuario_retador, id_usuario_retado) VALUES('$idUsuarioRetador', '$idUsuarioRetado')";
@@ -142,31 +142,31 @@
     $sql = "SELECT * FROM trivias t WHERE id = '$idRonda1'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    $datosRonda1Array = array_map("utf8_encode", $row );
+    $datosRonda1Array = ( $row );
     $datosRonda1 = json_encode($datosRonda1Array);
 
     $sql = "SELECT * FROM trivias WHERE id = '$idRonda2'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    $datosRonda2Array = array_map("utf8_encode", $row );
+    $datosRonda2Array = ( $row );
     $datosRonda2 = json_encode($datosRonda2Array);
 
     $sql = "SELECT * FROM trivias WHERE id = '$idRonda3'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    $datosRonda3Array = array_map("utf8_encode", $row );
+    $datosRonda3Array = ( $row );
     $datosRonda3 = json_encode($datosRonda3Array);
 
     $sql = "SELECT * FROM trivias WHERE id = '$idRonda4'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    $datosRonda4Array = array_map("utf8_encode", $row );
+    $datosRonda4Array = ( $row );
     $datosRonda4 = json_encode($datosRonda4Array);
 
     $sql = "SELECT * FROM trivias WHERE id = '$idRonda5'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    $datosRonda5Array = array_map("utf8_encode", $row );
+    $datosRonda5Array = ( $row );
     $datosRonda5 = json_encode($datosRonda5Array);
 
     $reto = json_encode(

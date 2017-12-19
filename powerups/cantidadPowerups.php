@@ -1,6 +1,6 @@
 <?php
     include '../config.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
     
     //muestra la cantidad de determinado powerups de un usuario
     //retorna la cantidad o el error correspondiente

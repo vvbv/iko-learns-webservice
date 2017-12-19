@@ -1,6 +1,6 @@
 <?php
     include '../config.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
 
 	//  Consulta del INNER JOIN
  	$consulta_mysql="select usuarios.id_facebook,puntos.puntos

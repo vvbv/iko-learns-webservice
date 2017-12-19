@@ -32,7 +32,7 @@ CREATE TABLE `numeros_ronda` (
   `id` bigint(20) NOT NULL,
   `numero_ronda` int(11) NOT NULL,
   `descripcion` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `numeros_ronda`
@@ -55,7 +55,7 @@ CREATE TABLE `palabras` (
   `id` bigint(20) NOT NULL,
   `palabra_ingles` varchar(80) NOT NULL,
   `palabra_ingles_yolo` varchar(80) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `palabras`
@@ -133,7 +133,7 @@ CREATE TABLE `powerups` (
   `icono` blob,
   `nombre` varchar(45) DEFAULT NULL,
   `descripcion` varchar(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `powerups`
@@ -153,7 +153,7 @@ CREATE TABLE `puntos` (
   `id` bigint(20) NOT NULL,
   `id_usuario` bigint(20) NOT NULL,
   `puntos` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `puntos`
@@ -178,7 +178,7 @@ CREATE TABLE `trivias` (
   `opcion_c` bigint(20) NOT NULL,
   `opcion_d` bigint(20) NOT NULL,
   `respuesta_correcta` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `trivias`
@@ -234,7 +234,7 @@ CREATE TABLE `trivias_retos` (
   `id_usuario_ganador` bigint(20) DEFAULT NULL,
   `fecha_hora_Registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `activa_hace` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Disparadores `trivias_retos`
@@ -249,15 +249,15 @@ CREATE TRIGGER `electorAutomaticoTrivias` BEFORE INSERT ON `trivias_retos` FOR E
     DECLARE id_ronda_5 BIGINT;
 
 	SET id_ronda_1 = (SELECT id FROM trivias ORDER BY RAND() LIMIT 1);
-    
+
 	SET id_ronda_2 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 ORDER BY RAND() LIMIT 1);
-    
+
 	SET id_ronda_3 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 AND trivias.id <> id_ronda_2 ORDER BY RAND() LIMIT 1);
-    
+
 	SET id_ronda_4 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 AND trivias.id <> id_ronda_2 AND trivias.id <> id_ronda_3 ORDER BY RAND() LIMIT 1);
-    
+
 	SET id_ronda_5 = (SELECT id FROM trivias WHERE trivias.id <> id_ronda_1 AND trivias.id <> id_ronda_2 AND trivias.id <> id_ronda_3 AND trivias.id <> id_ronda_4 ORDER BY RAND() LIMIT 1);
-	
+
     SET NEW.id_ronda_1 = id_ronda_1;
     SET NEW.id_ronda_2 = id_ronda_2;
     SET NEW.id_ronda_3 = id_ronda_3;
@@ -279,7 +279,7 @@ CREATE TABLE `trivias_solo_resueltas` (
   `id_usuario` bigint(20) NOT NULL,
   `id_trivia` bigint(20) NOT NULL,
   `fecha_hora_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -293,7 +293,7 @@ CREATE TABLE `trivia_reto_ronda` (
   `id_palabra_respuesta_usuario_retador` bigint(20) NOT NULL,
   `id_palabra_respuesta_usuario_retado` bigint(20) NOT NULL,
   `fecha_hora_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -310,7 +310,7 @@ CREATE TABLE `usuarios` (
   `password` varchar(100) DEFAULT NULL,
   `nivel` int(11) NOT NULL,
   `fecha_hora_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -333,7 +333,7 @@ CREATE TABLE `usuarios_powerups` (
   `power_id` int(11) NOT NULL,
   `fecha` datetime DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios_powerups`
@@ -353,7 +353,7 @@ CREATE TABLE `vidas` (
   `id` bigint(20) NOT NULL,
   `id_usuario` bigint(20) NOT NULL,
   `vidas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas

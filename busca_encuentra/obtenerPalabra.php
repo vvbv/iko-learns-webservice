@@ -1,8 +1,10 @@
 <?php
     include '../config.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
     // Consulta
-    $sql = "SELECT * FROM `palabras`  WHERE palabra_ingles_yolo IS NOT NULL AND palabra_ingles_yolo != '' ORDER BY RAND() 
+    $sql = "SELECT * FROM `palabras`  WHERE palabra_ingles_yolo IS NOT NULL AND palabra_ingles_yolo != '' AND
+palabra_ingles_yolo != 'null' ORDER BY
+RAND()
 LIMIT 1";
     $result = $conn->query($sql);
     //Manejo de resultados

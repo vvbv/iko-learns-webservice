@@ -1,7 +1,7 @@
 <?php
     include '../config.php';
     require '../fx/funcionesExtra.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
     
     // Consulta
     if(isset($_GET["id_usuario"]) && isset($_GET["vidas"]) && isset($_GET["accion"] )){

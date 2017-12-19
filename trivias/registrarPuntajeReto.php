@@ -1,7 +1,7 @@
 <?php
 
     include '../config.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
 
 	if($_GET['puntajePara'] == 'retador'){
 		$sql = "UPDATE `trivias_retos` SET `puntaje_retador` = ".$_GET['puntaje']." WHERE `id` = '".$_GET['id']."'";

@@ -1,7 +1,7 @@
 <?php
 
     include '../config.php';
-    header('Content-Type: application/json; charset=ISO-8859-1');
+    header('Content-Type: application/json; charset=UTF-8');
 
     $sql = "SELECT * FROM `trivias_retos` WHERE `id_usuario_retado` IS NULL";
     $result = $conn->query($sql);
