@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-12-2017 a las 01:47:33
+-- Tiempo de generación: 19-12-2017 a las 10:26:21
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.11
 
@@ -160,7 +160,9 @@ CREATE TABLE `puntos` (
 --
 
 INSERT INTO `puntos` (`id`, `id_usuario`, `puntos`) VALUES
-(1, 1, 90);
+(1, 1, 90),
+(2, 3, 100),
+(3, 4, 450);
 
 -- --------------------------------------------------------
 
@@ -227,6 +229,8 @@ CREATE TABLE `trivias_retos` (
   `id_ronda_3` bigint(20) DEFAULT NULL,
   `id_ronda_4` bigint(20) DEFAULT NULL,
   `id_ronda_5` bigint(20) DEFAULT NULL,
+  `puntaje_retador` int(11) DEFAULT NULL,
+  `puntaje_retado` int(11) DEFAULT NULL,
   `id_usuario_ganador` bigint(20) DEFAULT NULL,
   `fecha_hora_Registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `activa_hace` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -313,9 +317,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `id_facebook`, `username`, `nombres`, `apellidos`, `password`, `nivel`, `fecha_hora_registro`) VALUES
-(1, '123456789', NULL, NULL, NULL, NULL, 0, '2017-11-04 23:29:13'),
-(2, '987654321', NULL, NULL, NULL, NULL, 0, '2017-11-04 23:29:13'),
-(3, '1533632516732830', 'user1533632516732830', 'xx', 'xx', 'xx', 0, '2017-12-19 00:29:24');
+(1, '123456789', NULL, 'xxy', NULL, NULL, 0, '2017-11-04 23:29:13'),
+(2, '987654321', NULL, 'xxz', NULL, NULL, 0, '2017-11-04 23:29:13'),
+(3, '1533632516732831', 'user1533632516732831', 'xx', 'xx', 'xx', 41, '2017-12-19 00:29:24'),
+(4, '1533632516732830', 'user1533632516732830', 'Ð”Ð°Ð½Ð¸Ð¸Ð»', 'xx', 'xx', 55, '2017-12-19 05:29:01');
 
 -- --------------------------------------------------------
 
@@ -458,7 +463,7 @@ ALTER TABLE `palabras`
 -- AUTO_INCREMENT de la tabla `puntos`
 --
 ALTER TABLE `puntos`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `trivias`
@@ -470,7 +475,7 @@ ALTER TABLE `trivias`
 -- AUTO_INCREMENT de la tabla `trivias_retos`
 --
 ALTER TABLE `trivias_retos`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `trivias_solo_resueltas`
@@ -488,13 +493,13 @@ ALTER TABLE `trivia_reto_ronda`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `vidas`
 --
 ALTER TABLE `vidas`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas

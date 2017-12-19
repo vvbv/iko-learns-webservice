@@ -139,7 +139,7 @@
     $idRonda4 = $row['id_ronda_4'];
     $idRonda5 = $row['id_ronda_5'];
 
-    $sql = "SELECT * FROM trivias WHERE id = '$idRonda1'";
+    $sql = "SELECT * FROM trivias t WHERE id = '$idRonda1'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $datosRonda1Array = array_map("utf8_encode", $row );
